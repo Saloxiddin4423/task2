@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+        <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Questions?</th>
+        <th scope="col">A</th>
+        <th scope="col">B</th>
+        <th scope="col">D</th>
+      </tr>
+    </thead>
+    <tbody id="table">
+
+    </tbody>
+  </table>
+    </div>
+  </div>
+  
+  <script>
+      let table = document.getElementById("table")
+      let science = localStorage.getItem("science")
+      let id = localStorage.getItem("id")
+      let data = JSON.parse(localStorage.getItem(science))
+
+      data[id].forEach((elem,index) => {
+        table.innerHTML +=`
+        <tr>
+          <th scope="row">${index+1}</th>
+          <td>${elem.name}</td>
+          <td class="${elem.answer == 'A'? 'text-info':""}">${elem.inputA}</td>
+          <td class="${elem.answer == 'B'? 'text-info':""}">${elem.inputB}</td>
+          <td class="${elem.answer == 'D'? 'text-info':""}">${elem.inputD}</td>
+       </tr>
+        `
+    });
+
+  </script>
+  
+</body>
+</html>

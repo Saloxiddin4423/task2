@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar {
+    padding: 25px 55px;
+    box-shadow: 5px 5px 15px rgb(164, 164, 164);
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        gap: 0;
+        &__logo {
+            h1 {
+                font-weight: bold;
+                color: rgba(251, 47, 2, 0.568);
+                font-size: 35px;
+                cursor: pointer;
+            }
+        }
+
+        &__search {
+             
+            input {
+                outline: 1px solid rgba(251, 47, 2, 0.568);
+                border: 1px solid rgba(251, 47, 2, 0.568);
+                border-radius: 2px;
+                padding: 8px 15px;
+                transition: 0.6s;
+            }
+
+            input:active {
+                outline: 1px solid rgba(136, 25, 0, 0.568);
+                border: 1px solid rgba(117, 23, 1, 0.568);
+            }
+
+            input:focus {
+                outline: 1px solid rgba(136, 25, 0, 0.568);
+                border: 1px solid rgba(4, 117, 255, 0.568);
+            }
+
+            button {
+                padding: 8px 15px;
+                border: 2px solid rgba(251, 47, 2, 0.568);
+                border-radius: 4px;
+                cursor: pointer;
+                background: white;
+                transition: 0.6s;
+            }
+
+            button:hover {
+                background: rgba(251, 47, 2, 0.568);
+                color: wheat;
+            }
+        }
+    }
+}
+
+.section {
+    box-shadow: 5px 5px 15px rgb(175, 175, 175);
+    padding: 25px;
+    &__body {
+        width: 70%;
+        margin: 55px auto;
+
+        h1 {
+            font-size: 35px;
+            color: rgb(103, 101, 101);
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: 2px solid rgba(251, 47, 2, 0.568);
+            border-radius: 4px;
+            cursor: pointer;
+            background: white;
+            transition: 0.6s;
+            margin-top: 25px;
+        }
+
+        button:hover {
+            background: rgba(251, 47, 2, 0.568);
+            color: wheat;
+        }
+    }
+
+    &__test {
+        h2 {
+            text-align: center;
+            color: rgb(103, 101, 101);
+        }
+    }
+
+    &__cards {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        &__card {
+            background: rgb(228, 221, 207);
+            padding: 15px;
+            border-radius: 12px;
+
+            img {
+                width: 100%;
+                border-radius: 12px;
+                height: 200px;
+            }
+            p{
+                color: rgb(112, 112, 112);
+                margin-top: 8px;
+            }
+            button {
+                padding: 8px 15px;
+                border: 2px solid rgba(251, 47, 2, 0.568);
+                border-radius: 4px;
+                cursor: pointer;
+                background: white;
+                transition: 0.6s;
+                margin-top: 25px;
+            }
+    
+            button:hover {
+                background: rgba(251, 47, 2, 0.568);
+                color: wheat;
+            }
+        }
+    }
+}
