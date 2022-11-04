@@ -467,34 +467,34 @@ const TheNext = () => {
 		if (resOnaTili[id].length == counter) {
 		 
 		} else {
-			testI()
 			resOnaTili[id][counter ].answer == answera ? total++ : "";
 			radioA.checked = false
 			radioB.checked = false
 			radioD.checked = false
 	     	counter++
-
+			testI()
 		}
 	} else if (science == "tarx") {
 		if (resTarx[id].length == counter) {
 		} else {
-			testI()
 			resTarx[id][counter ].answer == answera ? total++ : "";
 			radioA.checked = false
 			radioB.checked = false
 			radioD.checked = false
 			counter++
+			testI()
 
 		}
 	} else if (science = "metematika") {
 		if (resMetematika[id].length == counter) {
 		} else {
-			testI()
 			resMetematika[id][counter  ].answer == answera ? total++ : "";
 			radioA.checked = false
 			radioB.checked = false
 			radioD.checked = false
 			counter++
+			testI()
+
 		}
 	}
 	number.innerHTML = counter + 1
@@ -511,7 +511,6 @@ const first = () => {
 	}
 	number.innerHTML = counter 
 }
-
 setTimeout(sayHi, 1000);
 
 function sayHi() {
