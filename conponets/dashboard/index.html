@@ -13,6 +13,29 @@
 <body>
     <div class="containers" id="containers">
         <main-aside></main-aside>
+        <section class="section__theResult d-none" id="section__theResult">
+            <div class="navbar">
+                <div class="navbar__text">
+                    <h2>Test results</h2>
+                </div>
+            </div>
+            <div class="section__theResult__body">
+                <div class="section__theResult__body__card">
+                    <div class="section__theResult__body__card__item">
+                        <h2>Completed successfully</h2>
+                        <div>
+                            <h5>Number of correct answers</h5>
+                            <h5>Number of wrong answers</h5>
+                        </div>
+                        <div>
+                            <p id="correct">15</p>
+                            <p id="wrong">15</p>
+                        </div>
+                        <button onclick="back()">Back to main</button>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="section__checkOut d-none" id="section__checkOut">
             <nav class="navbar">
                 <div class="navbar__text">
@@ -39,8 +62,8 @@
                             <b id="number">1</b>
                         </div>
                         <div>
-                            <button onclick="first()" >First</button>
-                            <button onclick="TheNext()">the next</button>
+                            <button onclick="first()" id="first">First</button>
+                            <button onclick="TheNext()" id="theNext">the next</button>
                         </div>
                     </div>
                 </div>

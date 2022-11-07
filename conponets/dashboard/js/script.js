@@ -2,7 +2,7 @@ class Aside extends HTMLElement {
 	connectedCallback() {
 		this.innerHTML = `
         <aside class="aside">
-        <div class="logo">
+        <div onclick="logo()" class="logo">
             <h1><i class="bi bi-lightning-charge "></i> <span> Clever</sapn></h1>
         </div>
         <div class="aside__saidbar">
@@ -73,7 +73,6 @@ customElements.define('main-navbar', Navbar);
 customElements.define('main-card', Card);
 customElements.define('main-aside', Aside);
 let id = localStorage.getItem("id")
-// let question = document.getElementById("question")
 let A = document.getElementById("A")
 let B = document.getElementById("B")
 let D = document.getElementById("D")
@@ -81,7 +80,7 @@ let radioA = document.getElementById("radioA")
 let radioB = document.getElementById("radioB")
 let radioD = document.getElementById("radioD")
 let time = document.getElementById("time")
-let min = 14
+let min = 1
 let sec = 60
 let total = 0;
 let counter = 0
@@ -106,6 +105,9 @@ let section__test__body__form = document.getElementById("section__test__body__fo
 let section__test__body__form2 = document.getElementById("section__test__body__form2")
 let section__account = document.getElementById("section__account")
 let sectionInput1 = document.getElementById("sectionInput1")
+let section__theResult = document.getElementById("section__theResult")
+let correct = document.getElementById("correct")
+let wrong =document.getElementById("wrong")
 let inputA = document.getElementById("inputA")
 let inputB = document.getElementById("inputB")
 let inputD = document.getElementById("inputD")
@@ -126,6 +128,8 @@ let prepared = document.getElementById("prepared")
 let caunt = 1;
 let tbody = document.getElementById("tbody")
 let section__checkOut = document.getElementById("section__checkOut")
+let theNext = document.getElementById("theNext")
+let firstB = document.getElementById("first")
 prepared.innerHTML = `Number of tests prepared: ${caunt}`
 
 const exchange = (arg) => {
@@ -155,7 +159,7 @@ const exchange = (arg) => {
 			Account.className = ""
 			Users.className = ' '
 			section__checkOut.className = "d-none  "
-
+			section__theResult.className = "d-none"
 		}
 		else if (arg == "Test") {
 			section__test.className = "d-block section__test"
@@ -167,6 +171,8 @@ const exchange = (arg) => {
 			Users.className = ''
 			Account.className = ""
 			section__checkOut.className = "d-none  "
+			section__theResult.className = "d-none"
+
 
 		}
 		else if (arg == "Users") {
@@ -179,6 +185,8 @@ const exchange = (arg) => {
 			Dashboard.className = ""
 			Account.className = ""
 			section__checkOut.className = "d-none  "
+			section__theResult.className = "d-none"
+
 
 		}
 		else if (arg == "openModal") {
@@ -193,6 +201,8 @@ const exchange = (arg) => {
 			section__test__body__form2.className = "d-none"
 			section__account.className = "d-none"
 			section__checkOut.className = "d-none  "
+			section__theResult.className = "d-none"
+
 
 		}
 		else if (arg == "severalOptions") {
@@ -202,6 +212,8 @@ const exchange = (arg) => {
 			section__test__body__form.className = "d-none"
 			section__account.className = "d-none"
 			section__checkOut.className = "d-none  "
+			section__theResult.className = "d-none"
+
 
 		}
 		else if (arg == "Account") {
@@ -214,6 +226,8 @@ const exchange = (arg) => {
 			Users.className = ''
 			Dashboard.className = ""
 			section__checkOut.className = "d-none  "
+			section__theResult.className = "d-none"
+
 
 		}else if (arg == "check"){
 			section__checkOut.className = "d-block section__checkOut "
@@ -221,13 +235,27 @@ const exchange = (arg) => {
 			section__users.className = "d-none"
 			section__test.className = "d-none"
 			section.className = "d-none"
-			Account.className = "active"
+			Account.className = ""
+			Test.className = ""
+			Users.className = ''
+			Dashboard.className = ""
+			section__theResult.className = "d-none"
+		}else if (arg == "theResult"){
+			section__theResult.className = "section__theResult d-block"
+			section__checkOut.className = "d-none "
+			section__account.className = "d-none"
+			section__users.className = "d-none"
+			section__test.className = "d-none"
+			section.className = "d-none"
+			Account.className = ""
 			Test.className = ""
 			Users.className = ''
 			Dashboard.className = ""
 		}
 }
-
+const logo =()=>{
+	location.reload()
+}
 const next = () => {
 	caunt++
 	prepared.innerHTML = `Number of tests prepared: ${caunt}`
@@ -463,19 +491,21 @@ const check = () => {
 }
 
 const TheNext = () => {
+	console.log(resOnaTili[id].length);
 	if (science == "OnaTili") {
 		if (resOnaTili[id].length == counter) {
-		 
-		} else {
-			resOnaTili[id][counter ].answer == answera ? total++ : "";
+			 theNext.className = "bg-active"
+			 firstB.className = ""
+ 	} else {
+			resOnaTili[id][counter].answer == answera ? total++ : null;
 			radioA.checked = false
 			radioB.checked = false
 			radioD.checked = false
-	     	counter++
+			counter ++
 			testI()
 		}
 	} else if (science == "tarx") {
-		if (resTarx[id].length == counter) {
+		if (resTarx[id].length >= counter) {
 		} else {
 			resTarx[id][counter ].answer == answera ? total++ : "";
 			radioA.checked = false
@@ -486,9 +516,9 @@ const TheNext = () => {
 
 		}
 	} else if (science = "metematika") {
-		if (resMetematika[id].length == counter) {
+		if (resMetematika[id].length+1 == counter) {
 		} else {
-			resMetematika[id][counter  ].answer == answera ? total++ : "";
+			resMetematika[id][counter].answer == answera ? total++ : "";
 			radioA.checked = false
 			radioB.checked = false
 			radioD.checked = false
@@ -496,20 +526,21 @@ const TheNext = () => {
 			testI()
 
 		}
-	}
-	number.innerHTML = counter + 1
+	 }
+	number.innerHTML = counter +1
 }
 
 const first = () => {
+	theNext.className = ""
 	counter--
-	if (-1 == counter) {
+	if ( counter == -1) {
 		counter = 0
-		alert(22)
+		firstB.className = "bg-active"
 	} else {
 		console.log(counter);
 		testI()
 	}
-	number.innerHTML = counter 
+	number.innerHTML = counter +1
 }
 setTimeout(sayHi, 1000);
 
@@ -519,20 +550,27 @@ function sayHi() {
 		sec = 60
 		min--
 	}
-	min == 0 ? alert("tugasin") : setTimeout(sayHi, 1000);
+	min == 0 ? finish() : setTimeout(sayHi, 1000);
 	time.innerHTML = min + ":" + sec
 }
 
 const finish = ()=>{
 	if (science == "OnaTili") {
-	alert(resOnaTili[id].length + " ta savoldan " + total + " tasini topdingiz")
+		correct.innerHTML = total;
+		wrong.innerHTML = resOnaTili[id].length - total
 	}else if (science=="tarx") {
-		alert(resTarx[id].length + " ta savoldan " + total + " tasini topdingiz")
+		correct.innerHTML = total;
+		wrong.innerHTML = resTarx[id].length.length - total
 	}
 	else if (science == "metematika") {
-		alert(resMetematika[id].length + " ta savoldan " + total + " tasini topdingiz")
+		correct.innerHTML = total;
+		wrong.innerHTML = resMetematika[id].length.length.length - total
 	}
 	min = 0
 	sec = 0
+	exchange("theResult")
+}
+const back = () => {
+	location.reload()
 }
 

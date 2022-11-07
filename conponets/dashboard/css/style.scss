@@ -9,6 +9,11 @@
 .active {
     color: #4C6FFF;
 }
+.bg-active{
+    background-color: rgb(255, 52, 52) !important;
+    color: black !important;
+    border: 1px solid rgb(146, 146, 146) !important;
+}
 
 .d-none {
     display: none !important;
@@ -19,7 +24,7 @@
 }
 
 .opasity {
-    opacity: 0.3 ;
+    opacity: 0.3;
 }
 
 a {
@@ -65,14 +70,17 @@ a {
     transition: 1s;
     display: grid;
     grid-template-columns: 1fr 5fr;
+
     .aside {
-        position: -webkit-sticky; /* Safari */
+        position: -webkit-sticky;
+        /* Safari */
         position: sticky;
         top: 0;
         border-right: 0.1px solid#E5E5E5;
         display: flex;
         flex-direction: column;
         height: 100vh;
+
         &__saidbar {
             display: flex;
             flex-direction: column;
@@ -128,10 +136,13 @@ a {
             }
         }
     }
-    .section__checkOut{
+
+    .section__checkOut {
         background: #E5E5E5;
+
         .navbar {
-            position: -webkit-sticky; /* Safari */
+            position: -webkit-sticky;
+            /* Safari */
             position: sticky;
             top: 0;
             padding: 25px;
@@ -140,6 +151,7 @@ a {
             border-bottom: 0.1px solid #E5E5E5;
             background: white;
             width: 100%;
+
             &__text {
                 h1 {
                     font-family: Arial, Helvetica, sans-serif;
@@ -150,7 +162,7 @@ a {
             }
 
             &__button {
-               
+
                 &-preview {
                     background: #FFFFFF;
                     padding: 12px 20px;
@@ -184,54 +196,64 @@ a {
                 }
             }
         }
-        &__body{
-           padding: 35px;
-           &__card{
-               background: #FFFF;
-               padding: 25px;
-               border-radius: 6px;
-               box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
-                &__text{
-                    p{
+
+        &__body {
+            padding: 35px;
+
+            &__card {
+                background: #FFFF;
+                padding: 25px;
+                border-radius: 6px;
+                box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+
+                &__text {
+                    p {
                         color: #4C6FFF;
                         font-size: 12px;
                     }
-                    h3{
+
+                    h3 {
                         margin-top: 12px;
                     }
                 }
-                &__input{
-                    input{
+
+                &__input {
+                    input {
                         margin-top: 22px;
                         width: 20px;
                         height: 20px;
                     }
-                    label{
+
+                    label {
                         font-size: 16px;
                         margin-left: 15px;
                     }
                 }
-                    &__button{
-                        display: flex;
-                        justify-content: space-between;
-                                    margin-top: 10px;
-                                    button{
-                                       background: #4C6FFF;
-                                       border-radius: 8px;
-                                       padding: 10px 24px;
-                                       color: #fff;
-                                       border: 0.5px solid #4C6FFF ;
-                                       outline: none;
-                                       transition: 0.6s;
-                                    }
-                                    button:hover{
-                                        background: #fff;
-                                        color: black;
-                                        border: 0.5px solid rgb(154, 154, 154);
-                                }
+
+                &__button {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 10px;
+
+                    button {
+                        background: #4C6FFF;
+                        border-radius: 8px;
+                        padding: 10px 24px;
+                        color: #fff;
+                        border: 0.5px solid #4C6FFF;
+                        outline: none;
+                        transition: 0.6s;
+                    }
+
+                    button:hover {
+                        background: #fff;
+                        color: black;
+                        border: 0.5px solid rgb(154, 154, 154);
+                    }
                 }
             }
         }
+
         // background: #E5E5E5;
         // padding: 30px 25px;
         // .nav {
@@ -245,9 +267,9 @@ a {
         //             background: #E5E5E5;
         //             font-size: 20px;
         //             color: #BB65FF;
-   
+
         //         }
-   
+
         //         &-finish {
         //             border-radius: 4px;
         //             border: 1px solid blue;
@@ -258,16 +280,16 @@ a {
         //             cursor: pointer;
         //             transition: 0.6s;
         //         }
-   
+
         //         &-finish:hover {
         //             background: white;
         //             color: black;
         //         }
         //     }
         // }
-   
+
         // .section {
-   
+
         //     &__body {
         //         padding: 25px;
         //         
@@ -280,7 +302,7 @@ a {
         //             p{
         //                 font-size: 14px;
         //             }
-   
+
         //             span {
         //                 font-size: 20px;
         //                 padding: 10px;
@@ -293,18 +315,22 @@ a {
         //     }
         // }
     }
+
     .section {
         background: #E5E5E5;
+
         .navbar {
-            position: -webkit-sticky; /* Safari */
+            position: -webkit-sticky;
+            /* Safari */
             position: sticky;
             top: 0;
-            width:100%;
+            width: 100%;
             padding: 25px;
             display: flex;
             justify-content: space-between;
             border-bottom: 0.1px solid #E5E5E5;
             background: white;
+
             &__text {
                 h1 {
                     font-family: Arial, Helvetica, sans-serif;
@@ -345,11 +371,12 @@ a {
         }
 
         &__body {
-            
+
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             padding: 15px;
             gap: 20px;
+
             .cards {
                 padding: 15px;
                 background: white;
@@ -475,8 +502,10 @@ a {
 
     .section__test {
         background: #E5E5E5;
+
         .navbar {
-            position: -webkit-sticky; /* Safari */
+            position: -webkit-sticky;
+            /* Safari */
             position: sticky;
             top: 0;
             padding: 25px;
@@ -531,6 +560,7 @@ a {
 
         &__body {
             padding: 25px;
+
             &__create {
                 background: #4C6FFF;
                 box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
@@ -572,12 +602,14 @@ a {
                 background: white;
                 padding: 20px;
                 border-radius: 15px;
+
                 &__header {
                     display: flex;
                     justify-content: space-between;
 
                     &-select {
                         margin-top: 10px;
+
                         select {
                             margin-top: 15px;
                             width: 100%;
@@ -715,6 +747,7 @@ a {
 
     .section__account {
         background: #E5E5E5;
+
         .navbar {
             padding: 25px;
             display: flex;
@@ -736,7 +769,7 @@ a {
             width: 75%;
             margin: 0 auto;
             padding: 25px;
-           
+
             &__img {
                 padding: 25px;
                 display: grid;
@@ -750,6 +783,7 @@ a {
 
                 &__text {
                     margin-left: 15px;
+
                     h3 {
                         font-size: 16px;
                     }
@@ -831,6 +865,69 @@ a {
             }
         }
     }
+
+    .section__theResult {
+        background: #E5E5E5;
+        .navbar {
+            padding: 15px;
+            background: #FFFFFF;
+            font-weight: 600;
+            font-size: 22px;
+        }
+
+        &__body {
+            background: #E5E5E5;
+            padding: 15px;
+            width: 100%;
+
+            &__card {
+                background: #FFFFFF;
+                box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+                border-radius: 16px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding: 15px 0;
+                &__item {
+                    text-align: center;
+                    line-height: 40px;
+                    div {
+                        display: flex;
+                        gap: 25px;
+                        justify-content: space-around;
+
+                        h5 {
+                            font-weight: 500;
+                            color: #7A828A;
+                            font-size: 15px;
+                        }
+
+                        p {
+                            font-weight: 700;
+                            font-size: 28px;
+                        }
+                    }
+
+                    button {
+                        background: #4C6FFF;
+                        padding: 12px 24px;
+                        border-radius: 8px;
+                        border:1px solid #4C6FFF;
+                        cursor: pointer;
+                        transition:  0.9s;
+                        color: white;
+                        outline: none;
+                    }
+                    button:hover{
+                        background: #ffffff;
+                        border: 1px solid #939393;
+                        color: rgb(11, 10, 10);
+                    }
+
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -845,10 +942,11 @@ a {
         padding: 25px;
         transition: 2s;
     }
-    
+
     .containers {
         display: grid;
         grid-template-columns: 0.5fr 6fr;
+
         .aside {
             width: 80px;
 
@@ -886,21 +984,24 @@ a {
                 }
             }
         }
-        .section{
-            &__body{
+
+        .section {
+            &__body {
                 grid-template-columns: 1fr 1fr;
             }
         }
-        .section__test{
-            &__body{
-                &__form{
-                    &__header{
+
+        .section__test {
+            &__body {
+                &__form {
+                    &__header {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                     }
                 }
             }
         }
+
         .section__account {
 
             .navbar {
@@ -928,36 +1029,43 @@ a {
         padding: 25px;
         transition: 2s;
     }
+
     .containers {
         display: grid;
         grid-template-columns: 0.9fr 6fr;
-        .section{
-            &__body{
-                grid-template-columns: 1fr  ;
+
+        .section {
+            &__body {
+                grid-template-columns: 1fr;
             }
         }
-        .section__test{
-            .navbar{
-                &__button{
+
+        .section__test {
+            .navbar {
+                &__button {
                     display: grid;
                     grid-template-columns: 1fr;
-                    &-Save{
+
+                    &-Save {
                         margin-top: 6px;
                     }
                 }
             }
-            &__body{
-                &__form{
-                    &__header{
+
+            &__body {
+                &__form {
+                    &__header {
                         display: grid;
-                        grid-template-columns: 1fr ;
-                        &__buttons{
+                        grid-template-columns: 1fr;
+
+                        &__buttons {
                             margin-top: 20px;
                         }
                     }
                 }
             }
         }
+
         .section__account {
 
             .navbar {
@@ -971,10 +1079,12 @@ a {
                 &__img {
                     &__text {
                         margin-left: 5px;
-                        h3{
+
+                        h3 {
                             font-size: 15px;
                         }
-                        p{
+
+                        p {
                             font-size: 10px;
                         }
                     }
