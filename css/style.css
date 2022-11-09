@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.d-none {
+  display: none;
+}
+
+.color-icon {
+  color: #3af701;
+}
+
+.form {
+  margin-top: 55px;
+}
+
+.form-title {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.form-text {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #707070;
+  margin-top: 20px;
+}
+
+.form .forma {
+  margin: 75px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+}
+
+.form .forma-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: #425466;
+}
+
+.form .forma-input {
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background: #EDF2F7;
+  width: 100%;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 15px;
+  border: 1.5px solid white;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.form .forma-input:focus {
+  border: 1.5px solid #4C6FFF;
+}
+
+.form .forma-button {
+  width: 100%;
+  height: 40px;
+  margin-top: 25px;
+  background: #4C6FFF;
+  border-radius: 8px;
+  color: #EDF2F7;
+  border: 2px solid white;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  cursor: pointer;
+}
+
+.form .forma-button:focus {
+  border: 2px solid #001eff;
+}
+
+.form-sign {
+  margin-top: 25px;
+}
+
+.form-sign-title {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.form-sign-text {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #707070;
+  margin-top: 20px;
+}
+
+.form-sign .forma {
+  width: 30%;
+  margin: 70px auto;
+}
+
+.form-sign .forma-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: #425466;
+}
+
+.form-sign .forma-input {
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background: #EDF2F7;
+  width: 100%;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 15px;
+  border: 2px solid white;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.form-sign .forma-input:focus {
+  border: 2px solid #4C6FFF;
+}
+
+.form-sign .forma-button {
+  width: 100%;
+  height: 40px;
+  margin-top: 25px;
+  background: #4C6FFF;
+  border-radius: 8px;
+  color: #EDF2F7;
+  border: 2px solid white;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  cursor: pointer;
+}
+
+.form-sign .forma-button:focus {
+  border: 2px solid #001eff;
+}
+
+.form-sign .forma .or {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.form-sign .forma .or:before,
+.form-sign .forma .or:after {
+  content: "";
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  border-bottom: 2px solid #4a4a4a;
+  margin: auto 15px;
+}
+
+.form-sign .forma h3 {
+  text-align: center;
+  font-size: 15px;
+}
+
+.form-sign .forma .forma__google {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 20px;
+}
+
+.form-sign .forma .forma__google div {
+  color: #EDF2F7;
+  background-color: #026cd5;
+  padding: 8px;
+  border-radius: 8px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border: 1px solid #004487;
+  cursor: pointer;
+}
+
+.form-sign .forma .forma__google .google:hover {
+  background-color: #EDF2F7;
+  color: red;
+  border: 1px solid #a3a3a3;
+}
+
+.form-sign .forma .forma__google .facebook:hover {
+  background-color: #0b4ca7;
+  color: white;
+  border: 1px solid #a3a3a3;
+}
+
+.form-sign .forma .forma__google .Twitter:hover {
+  background-color: #0b73a7;
+  color: white;
+  border: 1px solid #a3a3a3;
+}
+
+.form-sign .forma .forma__google .apple:hover {
+  background-color: #96d1ee;
+  color: #5a5a5a;
+  border: 1px solid #a3a3a3;
+}
+
+.form-sign .forma .register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 15px;
+}
+
+.form-sign .forma .register-button {
+  padding: 10px;
+  height: 40px;
+  margin-top: 5px;
+  background: #4C6FFF;
+  border-radius: 8px;
+  color: #EDF2F7;
+  border: 2px solid white;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  cursor: pointer;
+}
+
+.form-sign .forma .register-button:focus {
+  border: 2px solid #001eff;
+}
+
+@media only screen and (max-width: 800px) {
+  .form .forma {
+    width: 60%;
+  }
+  .form-sign .forma {
+    width: 60%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

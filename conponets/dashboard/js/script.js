@@ -202,8 +202,6 @@ const exchange = (arg) => {
 			section__account.className = "d-none"
 			section__checkOut.className = "d-none  "
 			section__theResult.className = "d-none"
-
-
 		}
 		else if (arg == "severalOptions") {
 			modal.className = "d-none"
@@ -213,8 +211,6 @@ const exchange = (arg) => {
 			section__account.className = "d-none"
 			section__checkOut.className = "d-none  "
 			section__theResult.className = "d-none"
-
-
 		}
 		else if (arg == "Account") {
 			section__account.className = "d-block section__account"
@@ -227,8 +223,6 @@ const exchange = (arg) => {
 			Dashboard.className = ""
 			section__checkOut.className = "d-none  "
 			section__theResult.className = "d-none"
-
-
 		}else if (arg == "check"){
 			section__checkOut.className = "d-block section__checkOut "
 			section__account.className = "d-none"
@@ -239,6 +233,7 @@ const exchange = (arg) => {
 			Test.className = ""
 			Users.className = ''
 			Dashboard.className = ""
+		    setTimeout(sayHi, 1000);
 			section__theResult.className = "d-none"
 		}else if (arg == "theResult"){
 			section__theResult.className = "section__theResult d-block"
@@ -283,7 +278,6 @@ const next = () => {
 	bb.checked = false
 	dd.checked = false
 }
-
 const addTest = () => {
 	console.log(answers);
 
@@ -333,7 +327,6 @@ const addTest = () => {
 		}
 		location.reload()
 	}
-
 }
 
 function reading() {
@@ -356,7 +349,6 @@ function reading() {
 	    `
 		});
 	}
-
 	if (localStorage.getItem("tarx")) {
 		JSON.parse(localStorage.getItem("tarx")).forEach((elem, index) => {
 			section__body.innerHTML += `
@@ -456,26 +448,27 @@ if (localStorage.getItem("data")) {
 	</tr>
 		`
 	})
-
 }
 const testI = () => {
-	if (science == "OnaTili") {
-		question.innerHTML = resOnaTili[id][counter].name
-		A.innerHTML = resOnaTili[id][counter].inputA
-		B.innerHTML = resOnaTili[id][counter].inputB
-		D.innerHTML = resOnaTili[id][counter].inputD
-	} else if (science == "tarx") {
-		question.innerHTML = resTarx[id][counter].name
-		A.innerHTML = resTarx[id][counter].inputA
-		B.innerHTML = resTarx[id][counter].inputB
-		D.innerHTML = resTarx[id][counter].inputD
-	} else if (science == "metematika") {
-		question.innerHTML = resMetematika[id][counter].name
-		A.innerHTML = resMetematika[id][counter].inputA
-		B.innerHTML = resMetematika[id][counter].inputB
-		D.innerHTML = resMetematika[id][counter].inputD
+	if (resOnaTili[id][counter].name) {
+		if (science == "OnaTili") {
+			question.innerHTML = resOnaTili[id][counter].name
+			A.innerHTML = resOnaTili[id][counter].inputA
+			B.innerHTML = resOnaTili[id][counter].inputB
+			D.innerHTML = resOnaTili[id][counter].inputD
+		} else if (science == "tarx") {
+			question.innerHTML = resTarx[id][counter].name
+			A.innerHTML = resTarx[id][counter].inputA
+			B.innerHTML = resTarx[id][counter].inputB
+			D.innerHTML = resTarx[id][counter].inputD
+		} else if (science == "metematika") {
+			question.innerHTML = resMetematika[id][counter].name
+			A.innerHTML = resMetematika[id][counter].inputA
+			B.innerHTML = resMetematika[id][counter].inputB
+			D.innerHTML = resMetematika[id][counter].inputD
+		}
 	}
-
+	
 }
 testI()
 
@@ -489,13 +482,11 @@ const check = () => {
 		answera = radioD.value
 	}
 }
-
 const TheNext = () => {
 	console.log(resOnaTili[id].length);
 	if (science == "OnaTili") {
-		if (resOnaTili[id].length == counter) {
-			 theNext.className = "bg-active"
-			 firstB.className = ""
+		if (resOnaTili[id].length+1 == counter) {
+			 theNext.disabled = true
  	} else {
 			resOnaTili[id][counter].answer == answera ? total++ : null;
 			radioA.checked = false
@@ -542,7 +533,6 @@ const first = () => {
 	}
 	number.innerHTML = counter +1
 }
-setTimeout(sayHi, 1000);
 
 function sayHi() {
 	sec--
