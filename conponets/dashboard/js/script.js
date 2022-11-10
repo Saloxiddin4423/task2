@@ -130,6 +130,11 @@ let tbody = document.getElementById("tbody")
 let section__checkOut = document.getElementById("section__checkOut")
 let theNext = document.getElementById("theNext")
 let firstB = document.getElementById("first")
+let InputName = document.getElementById("InputName")
+let InputA = document.getElementById("InputA")
+let InputB = document.getElementById("InputB")
+let InputD = document.getElementById("InputD")
+let newTestData  =[ ]
 prepared.innerHTML = `Number of tests prepared: ${caunt}`
 
 const exchange = (arg) => {
@@ -254,90 +259,145 @@ const exchange = (arg) => {
 const logo =()=>{
 	location.reload()
 }
-const next = () => {
-	if (inputA.value == inputB.value || inputB.value == inputD.value || inputA.value == inputD.value ) {
-		  alert('Please note that not all test options are the same')
-	}else{
-	caunt++
-	prepared.innerHTML = `Number of tests prepared: ${caunt}`
-	if (aa.checked) {
-		answers = aa.value
-	} else if (bb.checked) {
-		answers = bb.value
-	}
-	else if (dd.checked) {
-		answers = dd.value
-	}
-	let person = {
-		name: sectionInput1.value,
-		inputA: inputA.value,
-		inputB: inputB.value,
-		inputD: inputD.value,
-		answer: answers,
-	}
-	test.push(person)
-	sectionInput1.value = ""
-	inputA.value = ""
-	inputB.value = ""
-	inputD.value = ""
-	aa.checked = false
-	bb.checked = false
-	dd.checked = false
+const next = (arg) => {
+	if (arg == "collar") {
+		if (inputA.value == inputB.value || inputB.value == inputD.value || inputA.value == inputD.value ) {
+			alert('Please note that not all test options are the same')
+	  }else{
+	  caunt++
+	  prepared.innerHTML = `Number of tests prepared: ${caunt}`
+	  if (aa.checked) {
+		  answers = aa.value
+	  } else if (bb.checked) {
+		  answers = bb.value
+	  }
+	  else if (dd.checked) {
+		  answers = dd.value
+	  }
+	  let person = {
+		  name: sectionInput1.value,
+		  inputA: inputA.value,
+		  inputB: inputB.value,
+		  inputD: inputD.value,
+		  answer: answers,
+	  }
+	  test.push(person)
+	  sectionInput1.value = ""
+	  inputA.value = ""
+	  inputB.value = ""
+	  inputD.value = ""
+	  aa.checked = false
+	  bb.checked = false
+	  dd.checked = false
+	  }
+	}else if (arg == "aLot") {
+		if (InputA.value == InputB.value || InputB.value == InputD.value || InputA.value == InputD.value ) {
+			alert('Please note that not all test options are the same')
+	  }else{
+		caunt++
+		prepared.innerHTML = `Number of tests prepared: ${caunt}`
+		let person = {
+			name: InputName.value,
+			InputA: InputA.value,
+			InputB: InputB.value,
+			InputD: InputD.value,
+		}
+		test.push(person)
+		InputName.value = ""
+		InputA.value = ""
+		InputB.value = ""
+		InputD.value = ""
+		}
 	}
 	
 }
-const addTest = () => {
-	console.log(answers);
-
-	if (category.value == "OnaTili") {
-		if (localStorage.getItem("OnaTili")) {
-			OnaTili = []
-			JSON.parse(localStorage.getItem("OnaTili")).forEach(elem => {
-				OnaTili.push(elem)
+const addTest = (arg) => {
+	if (arg == "collor") {
+		if (category.value == "OnaTili") {
+			if (localStorage.getItem("OnaTili")) {
+				OnaTili = []
+				JSON.parse(localStorage.getItem("OnaTili")).forEach(elem => {
+					OnaTili.push(elem)
+				});
+				OnaTili.push(test)
+				localStorage.setItem("OnaTili", JSON.stringify(OnaTili))
+			} else {
+				OnaTili.push(test)
+				localStorage.setItem("OnaTili", JSON.stringify(OnaTili))
+				reading()
+			}
+			location.reload()
+		}
+	
+		else if (category.value == "tarx") {
+			if (localStorage.getItem("tarx")) {
+				tarx = []
+				JSON.parse(localStorage.getItem("tarx")).forEach(elem => {
+					tarx.push(elem)
+				});
+				tarx.push(test)
+				localStorage.setItem("tarx", JSON.stringify(tarx))
+			} else {
+				tarx.push(test)
+				localStorage.setItem("tarx", JSON.stringify(tarx))
+				reading()
+			}
+			location.reload()
+		}
+		else if (category.value == "metematika") {
+			if (localStorage.getItem("metematika")) {
+				metematika = []
+				JSON.parse(localStorage.getItem("metematika")).forEach(elem => {
+					metematika.push(elem)
+				});
+				metematika.push(test)
+				localStorage.setItem("metematika", JSON.stringify(metematika))
+			} else {
+				metematika.push(test)
+				localStorage.setItem("metematika", JSON.stringify(metematika))
+				reading()
+			}
+			location.reload()
+		}
+	}else if (arg == "aLot") {
+		console.log(JSON.parse(localStorage.getItem("newTestData")));
+		if (localStorage.getItem("newTestData")) {
+			newTestData = []
+			JSON.parse(localStorage.getItem("newTestData")).forEach(elem => {
+				newTestData.push(elem)
 			});
-			OnaTili.push(test)
-			localStorage.setItem("OnaTili", JSON.stringify(OnaTili))
-		} else {
-			OnaTili.push(test)
-			localStorage.setItem("OnaTili", JSON.stringify(OnaTili))
+			newTestData.push(test)
+			localStorage.setItem("newTestData", JSON.stringify(newTestData))
+		}
+		 else{
+			newTestData.push(test)
+			localStorage.setItem("newTestData", JSON.stringify(newTestData) )
 			reading()
 		}
 		location.reload()
 	}
-
-	else if (category.value == "tarx") {
-		if (localStorage.getItem("tarx")) {
-			tarx = []
-			JSON.parse(localStorage.getItem("tarx")).forEach(elem => {
-				tarx.push(elem)
-			});
-			tarx.push(test)
-			localStorage.setItem("tarx", JSON.stringify(tarx))
-		} else {
-			tarx.push(test)
-			localStorage.setItem("tarx", JSON.stringify(tarx))
-			reading()
-		}
-		location.reload()
-	}
-	else if (category.value == "metematika") {
-		if (localStorage.getItem("metematika")) {
-			metematika = []
-			JSON.parse(localStorage.getItem("metematika")).forEach(elem => {
-				metematika.push(elem)
-			});
-			metematika.push(test)
-			localStorage.setItem("metematika", JSON.stringify(metematika))
-		} else {
-			metematika.push(test)
-			localStorage.setItem("metematika", JSON.stringify(metematika))
-			reading()
-		}
-		location.reload()
-	}
+	
 }
-
 function reading() {
+	if (localStorage.getItem("newTestData")) {
+		JSON.parse(localStorage.getItem("newTestData")).forEach((elem, index) => {
+			section__body.innerHTML += `
+		   <div class="cards">
+			<div class="card" onclick="access('${index}','psychologist')">
+			   <img src="../../img/matem.png" alt="">
+			   <h3 class="card-title">Psychologist</h3>
+			   <a href="answers.html">
+			   <p class="card-label">check the answers</p></a>
+			 <button onclick="exchange('check')" class="card-btn">check out</button> 
+			</div>
+			<div class="card-button">
+			    <h2 ><i onclick="crudDelet(${index},'psychologist')" class="bi bi-trash"></i></h2>
+			  <h2><i class="bi bi-pencil-square"></i></h2>
+			</div>
+		   </div>
+	    `
+		});
+	}
 	if (localStorage.getItem("OnaTili")) {
 		JSON.parse(localStorage.getItem("OnaTili")).forEach((elem, index) => {
 			section__body.innerHTML += `
