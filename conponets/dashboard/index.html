@@ -12,7 +12,33 @@
 
 <body>
     <div class="containers" id="containers">
-        <main-aside></main-aside>
+        <aside class="aside">
+            <div onclick="logo()" class="logo">
+                <img src="../../img/dashboard.png" width="35px" alt="">
+                <img class="clever" src="../../img/clever.png" height="20px" alt="">
+            </div>
+            <div class="aside__saidbar">
+                <div class="aside__saidbar-route">
+                    <h3 id="Dashboard" onclick="exchange('Dashboard')" class="active">
+                        <i class="bi bi-house"></i>
+                        <span> Dashboard
+                    </h3>
+                    </sapan>
+                    <h3 id="Test" onclick="exchange('Test')">
+                        <i class="bi bi-chat "></i>
+                        <span>Test CRUD </span>
+                    </h3>
+                    <h3 id="Users" onclick="exchange('Users')"><i class="bi bi-person-circle"></i><span> Users</span>
+                    </h3>
+
+                </div>
+                <div class="aside__saidbar-register">
+                    <h3 class="" id="Account" onclick="exchange('Account')"><i
+                            class="bi bi-person-badge-fill"></i><span> Account</span></h3>
+                    <h3 onclick="exchange('Logout')"><i class="bi bi-box-arrow-left"></i> <span>Logout</span></h3>
+                </div>
+            </div>
+        </aside>
         <section class="section__theResult d-none" id="section__theResult">
             <div class="navbar">
                 <div class="navbar__text">
@@ -43,19 +69,23 @@
                 </div>
                 <div class="navbar__button">
                     <button class="navbar__button-preview" id="time"><i class="bi bi-eye"></i> Test preview </button>
-                    <button class="navbar__button-Save" onclick="finish()" ><i class="bi bi-bookmark-check"></i> Finish</button>
+                    <button class="navbar__button-Save" onclick="finish()"><i class="bi bi-bookmark-check"></i>
+                        Finish</button>
                 </div>
             </nav>
-            <div class="section__checkOut__body" >
+            <div class="section__checkOut__body">
                 <div class="section__checkOut__body__card">
                     <div class="section__checkOut__body__card__text">
                         <p>Bitta javobni tanlashingiz mumkin</p>
                         <h3 id="question">Najot Ta’lim’ga qachon va qayerda, kim tomonidan asos solingan?</h3>
                     </div>
                     <div class="section__checkOut__body__card__input">
-                        <input  onclick="check()" type="radio" value="A" name="radio" id="radioA" > <label for="radioA" id="A"> 1991-yil, 1-sentyabr. Abdurahmon Poziljonov</label> <br> <br>
-                        <input  onclick="check()" type="radio" value="B" name="radio" id="radioB"  > <label for="radioB" id="B"> 1991-yil, 1-sentyabr. Abdurahmon Poziljonov</label> <br> <br>
-                        <input  onclick="check()" type="radio" value="D" name="radio" id="radioD" > <label for="radioD" id="D"> 1991-yil, 1-sentyabr. Abdurahmon Poziljonov</label> <br> <br>
+                        <input onclick="check()" type="radio" value="A" name="radio" id="radioA"> <label for="radioA"
+                            id="A"> 1991-yil, 1-sentyabr. Abdurahmon Poziljonov</label> <br> <br>
+                        <input onclick="check()" type="radio" value="B" name="radio" id="radioB"> <label for="radioB"
+                            id="B"> 1991-yil, 1-sentyabr. Abdurahmon Poziljonov</label> <br> <br>
+                        <input onclick="check()" type="radio" value="D" name="radio" id="radioD"> <label for="radioD"
+                            id="D"> 1991-yil, 1-sentyabr. Abdurahmon Poziljonov</label> <br> <br>
                     </div>
                     <div class="section__checkOut__body__card__button">
                         <div>
@@ -69,7 +99,7 @@
                 </div>
             </div>
         </section>
-        <section class="section d-block" id="section">
+        <section class="section d-none" id="section">
             <main-navbar></main-navbar>
             <div class="section__body" id="section__body">
 
@@ -85,12 +115,12 @@
                         </tr>
                     </thead>
                     <tbody id="tbody">
-                     
+
                     </tbody>
                 </table>
             </div>
         </section>
-        <section class="section__test d-none" id="section__test">
+        <section class="section__test d-block" id="section__test">
             <nav class="navbar">
                 <div class="navbar__text">
                     <h1>Create new test</h1>
@@ -113,7 +143,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="section__test__body__form d-block" id="section__test__body__form">
+                <div class="section__test__body__form d-none" id="section__test__body__form">
                     <div class="section__test__body__form__header">
                         <div class="section__test__body__form__header-title">
                             <h2>A single-choice question</h2>
@@ -149,23 +179,25 @@
                         placeholder="Write the answer to option D!" name="" id="inputD"> <br><br><br>
                     <h4 id="prepared">Number of tests prepared:</h4>
                 </div>
-                
-                <div class="section__test__body__form2 d-none" id="section__test__body__form2">
+
+                <div class="section__test__body__form2 d-block" id="section__test__body__form2">
                     <div class="section__test__body__form__header">
                         <div class="section__test__body__form__header-title">
-                            <h2>Bir nechta variant tanlanuvchi savol</h2>
+                            <h2>A multiple choice question</h2>
                         </div>
                         <div class="section__test__body__form__header__buttons">
-                            <button class="section__test__body__form__header__buttons-create"> + Yana qo‘shish</button>
-                            <button class="section__test__body__form__header__buttons-delete"><i
-                                    class="bi bi-trash3-fill"></i></button>
-
+                            <button onclick="" class="section__test__body__form__header__buttons-delete">
+                                Next<i class="bi bi-arrow-right-short"></i>
+                            </button>
+                            <button onclick="" class="section__test__body__form__header__buttons-create">
+                                <i class="bi bi-bookmark-check"></i>Save
+                            </button>
                         </div>
                     </div>
-                    <label for="">Savol nomi</label> <br>
+                    <label for="">Question title</label> <br>
                     <input class="section__test__body__form-input" type="text" placeholder="Savol nomini kiriting"
                         name="" id=""><br>
-                    <label for="">Variantlar</label> <br>
+                    <label for="">Options</label> <br>
                     <input type="checkbox" placeholder="Savol nomini kiriting" name="" id="">
                     <input class="section__test__body__form-input" type="text" placeholder="Savol nomini kiriting"
                         name="" id=""><br>
@@ -176,7 +208,6 @@
                     <input class="section__test__body__form-input" type="text" placeholder="Savol nomini kiriting"
                         name="" id="">
                 </div>
-
             </div>
         </section>
         <section class="section__users d-none " id="section__users">
@@ -236,8 +267,8 @@
             <h2>Savol turini tanlang</h2> <br>
             <hr><br>
             <div class="modal__header-item" onclick="exchange('oneOption')">
-                <div class="modal__header-item-icon">
-                    <i class="bi bi-radioactive"></i>
+                <div class=" ">
+                    <img src="../../img/Frame 21237.png" width="44px" alt="">
                 </div>
                 <div class="modal__header-item-text">
                     <h3> Bitta variant tanlanuvchi savol</h3>

@@ -12,6 +12,21 @@
   color: #3af701;
 }
 
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+}
+
+.logo .clever {
+  height: 20px;
+  margin-top: 10px;
+}
+
 .form {
   margin-top: 55px;
 }
@@ -78,7 +93,7 @@
 }
 
 .form-sign {
-  margin-top: 25px;
+  margin-top: 60px;
 }
 
 .form-sign-title {

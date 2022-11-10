@@ -233,6 +233,7 @@ const exchange = (arg) => {
 			Test.className = ""
 			Users.className = ''
 			Dashboard.className = ""
+			testI()
 		    setTimeout(sayHi, 1000);
 			section__theResult.className = "d-none"
 		}else if (arg == "theResult"){
@@ -246,12 +247,17 @@ const exchange = (arg) => {
 			Test.className = ""
 			Users.className = ''
 			Dashboard.className = ""
+		}else if (arg == "Logout") {
+			window.location.href = "../../index.html";
 		}
 }
 const logo =()=>{
 	location.reload()
 }
 const next = () => {
+	if (inputA.value == inputB.value || inputB.value == inputD.value || inputA.value == inputD.value ) {
+		  alert('Please note that not all test options are the same')
+	}else{
 	caunt++
 	prepared.innerHTML = `Number of tests prepared: ${caunt}`
 	if (aa.checked) {
@@ -277,6 +283,8 @@ const next = () => {
 	aa.checked = false
 	bb.checked = false
 	dd.checked = false
+	}
+	
 }
 const addTest = () => {
 	console.log(answers);
@@ -470,7 +478,6 @@ const testI = () => {
 	}
 	
 }
-testI()
 
 const check = () => {
 	if (radioA.checked) {
@@ -483,8 +490,7 @@ const check = () => {
 	}
 }
 const TheNext = () => {
-	console.log(resOnaTili[id].length);
-	if (science == "OnaTili") {
+ 	if (science == "OnaTili") {
 		if (resOnaTili[id].length+1 == counter) {
 			 theNext.disabled = true
  	} else {
@@ -495,7 +501,8 @@ const TheNext = () => {
 			counter ++
 			testI()
 		}
-	} else if (science == "tarx") {
+	}
+	 else if (science == "tarx") {
 		if (resTarx[id].length >= counter) {
 		} else {
 			resTarx[id][counter ].answer == answera ? total++ : "";
@@ -506,7 +513,8 @@ const TheNext = () => {
 			testI()
 
 		}
-	} else if (science = "metematika") {
+	}
+	 else if (science = "metematika") {
 		if (resMetematika[id].length+1 == counter) {
 		} else {
 			resMetematika[id][counter].answer == answera ? total++ : "";

@@ -7,7 +7,7 @@ let form = document.getElementById('form')
 let form_sign = document.getElementById('form-sign')
 let emailR = document.getElementById("emailR")
 
-let data = []   
+let data = []
 let res = JSON.parse(localStorage.getItem("data"))
 
 let superAdimin = {
@@ -29,6 +29,7 @@ const register = () => {
                 email: email.value,
                 password: password.value
             }
+            location.reload()
             data.push(person)
             if (res !== null ? res.some(elem => elem.email == email.value) : false) {
                 email.style.border = "2px solid red"
@@ -70,11 +71,11 @@ const register = () => {
         }
         if (email.value == "") {
             email.style.border = "2px solid red"
-        } if (password.value == "" ) {
+        } if (password.value == "") {
             password.style.border = "2px solid red"
-        }  if (  password.value.length < 8) {
+        } if (password.value.length < 8) {
             password.style.border = "2px solid red"
-            
+
         }
     }
 }
@@ -88,9 +89,13 @@ const auto = () => {
 }
 
 const login = () => {
-    const result = res?.some(elem => elem.password == passwordSign.value && elem.email == emailSign.value)
-    console.log(result, 'result');
+    const result = res?.some((elem,index) => elem.password == passwordSign.value && elem.email == emailSign.value)
     if (result) {
+        res?.some((elem,index)=>{
+            if ( elem.password == passwordSign.value && elem.email == emailSign.value) {
+               localStorage.setItem( "userId" , `a${index}`)
+            } 
+        })
         window.location.href = "../conponets/dashboard/index.html";
         passwordSign.style.border = "2px solid #4C6FFF"
         emailSign.style.border = "2px solid #4C6FFF"
@@ -105,7 +110,6 @@ const login = () => {
 const closeR = () => {
     form.style.display = "none"
     form_sign.style.display = "block"
-
 }
 const openR = () => {
     form_sign.style.display = "none"

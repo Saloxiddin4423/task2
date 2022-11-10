@@ -37,7 +37,7 @@ a {
   width: 550px;
   height: 300px;
   border-radius: 12px;
-  background: #c4c4c5;
+  background: #e3e3e3;
   position: absolute;
   top: 25vh;
   left: 30%;
@@ -104,6 +104,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 100vh;
 }
 
 .containers .aside__saidbar-route {
@@ -147,12 +148,14 @@ a {
 .containers .aside .logo {
   padding: 25px;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
 }
 
-.containers .aside .logo h1 {
-  color: #BB65FF;
-  font-weight: 700;
-  font-family: Arial, Helvetica, sans-serif;
+.containers .aside .logo .clever {
+  margin-top: 8px;
 }
 
 .containers .section__checkOut {
