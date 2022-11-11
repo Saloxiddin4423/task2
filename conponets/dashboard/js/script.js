@@ -107,7 +107,7 @@ let section__account = document.getElementById("section__account")
 let sectionInput1 = document.getElementById("sectionInput1")
 let section__theResult = document.getElementById("section__theResult")
 let correct = document.getElementById("correct")
-let wrong =document.getElementById("wrong")
+let wrong = document.getElementById("wrong")
 let inputA = document.getElementById("inputA")
 let inputB = document.getElementById("inputB")
 let inputD = document.getElementById("inputD")
@@ -134,7 +134,9 @@ let InputName = document.getElementById("InputName")
 let InputA = document.getElementById("InputA")
 let InputB = document.getElementById("InputB")
 let InputD = document.getElementById("InputD")
-let newTestData  =[ ]
+let newTestData = []
+let resNewTestData = JSON.parse(localStorage.getItem("newTestData"))
+let dataAnswers = [] 
 prepared.innerHTML = `Number of tests prepared: ${caunt}`
 
 const exchange = (arg) => {
@@ -228,7 +230,7 @@ const exchange = (arg) => {
 			Dashboard.className = ""
 			section__checkOut.className = "d-none  "
 			section__theResult.className = "d-none"
-		}else if (arg == "check"){
+		} else if (arg == "check") {
 			section__checkOut.className = "d-block section__checkOut "
 			section__account.className = "d-none"
 			section__users.className = "d-none"
@@ -239,9 +241,9 @@ const exchange = (arg) => {
 			Users.className = ''
 			Dashboard.className = ""
 			testI()
-		    setTimeout(sayHi, 1000);
+			setTimeout(sayHi, 1000);
 			section__theResult.className = "d-none"
-		}else if (arg == "theResult"){
+		} else if (arg == "theResult") {
 			section__theResult.className = "section__theResult d-block"
 			section__checkOut.className = "d-none "
 			section__account.className = "d-none"
@@ -252,64 +254,64 @@ const exchange = (arg) => {
 			Test.className = ""
 			Users.className = ''
 			Dashboard.className = ""
-		}else if (arg == "Logout") {
+		} else if (arg == "Logout") {
 			window.location.href = "../../index.html";
 		}
 }
-const logo =()=>{
+const logo = () => {
 	location.reload()
 }
 const next = (arg) => {
 	if (arg == "collar") {
-		if (inputA.value == inputB.value || inputB.value == inputD.value || inputA.value == inputD.value ) {
+		if (inputA.value == inputB.value || inputB.value == inputD.value || inputA.value == inputD.value) {
 			alert('Please note that not all test options are the same')
-	  }else{
-	  caunt++
-	  prepared.innerHTML = `Number of tests prepared: ${caunt}`
-	  if (aa.checked) {
-		  answers = aa.value
-	  } else if (bb.checked) {
-		  answers = bb.value
-	  }
-	  else if (dd.checked) {
-		  answers = dd.value
-	  }
-	  let person = {
-		  name: sectionInput1.value,
-		  inputA: inputA.value,
-		  inputB: inputB.value,
-		  inputD: inputD.value,
-		  answer: answers,
-	  }
-	  test.push(person)
-	  sectionInput1.value = ""
-	  inputA.value = ""
-	  inputB.value = ""
-	  inputD.value = ""
-	  aa.checked = false
-	  bb.checked = false
-	  dd.checked = false
-	  }
-	}else if (arg == "aLot") {
-		if (InputA.value == InputB.value || InputB.value == InputD.value || InputA.value == InputD.value ) {
-			alert('Please note that not all test options are the same')
-	  }else{
-		caunt++
-		prepared.innerHTML = `Number of tests prepared: ${caunt}`
-		let person = {
-			name: InputName.value,
-			InputA: InputA.value,
-			InputB: InputB.value,
-			InputD: InputD.value,
+		} else {
+			caunt++
+			prepared.innerHTML = `Number of tests prepared: ${caunt}`
+			if (aa.checked) {
+				answers = aa.value
+			} else if (bb.checked) {
+				answers = bb.value
+			}
+			else if (dd.checked) {
+				answers = dd.value
+			}
+			let person = {
+				name: sectionInput1.value,
+				inputA: inputA.value,
+				inputB: inputB.value,
+				inputD: inputD.value,
+				answer: answers,
+			}
+			test.push(person)
+			sectionInput1.value = ""
+			inputA.value = ""
+			inputB.value = ""
+			inputD.value = ""
+			aa.checked = false
+			bb.checked = false
+			dd.checked = false
 		}
-		test.push(person)
-		InputName.value = ""
-		InputA.value = ""
-		InputB.value = ""
-		InputD.value = ""
+	} else if (arg == "aLot") {
+		if (InputA.value == InputB.value || InputB.value == InputD.value || InputA.value == InputD.value) {
+			alert('Please note that not all test options are the same')
+		} else {
+			caunt++
+			prepared.innerHTML = `Number of tests prepared: ${caunt}`
+			let person = {
+				name: InputName.value,
+				InputA: InputA.value,
+				InputB: InputB.value,
+				InputD: InputD.value,
+			}
+			test.push(person)
+			InputName.value = ""
+			InputA.value = ""
+			InputB.value = ""
+			InputD.value = ""
 		}
 	}
-	
+
 }
 const addTest = (arg) => {
 	if (arg == "collor") {
@@ -328,7 +330,7 @@ const addTest = (arg) => {
 			}
 			location.reload()
 		}
-	
+
 		else if (category.value == "tarx") {
 			if (localStorage.getItem("tarx")) {
 				tarx = []
@@ -359,7 +361,7 @@ const addTest = (arg) => {
 			}
 			location.reload()
 		}
-	}else if (arg == "aLot") {
+	} else if (arg == "aLot") {
 		console.log(JSON.parse(localStorage.getItem("newTestData")));
 		if (localStorage.getItem("newTestData")) {
 			newTestData = []
@@ -369,14 +371,14 @@ const addTest = (arg) => {
 			newTestData.push(test)
 			localStorage.setItem("newTestData", JSON.stringify(newTestData))
 		}
-		 else{
+		else {
 			newTestData.push(test)
-			localStorage.setItem("newTestData", JSON.stringify(newTestData) )
+			localStorage.setItem("newTestData", JSON.stringify(newTestData))
 			reading()
 		}
 		location.reload()
 	}
-	
+
 }
 function reading() {
 	if (localStorage.getItem("newTestData")) {
@@ -476,6 +478,11 @@ function crudDelet(id, sciences) {
 		section__body.innerHTML = ""
 		localStorage.setItem("metematika", JSON.stringify(resMetematika.filter((item) => item !== resMetematika[id])))
 		reading()
+	} else if (sciences == "psychologist") {
+		section__body.innerHTML = ""
+		deleteItem = JSON.stringify(resNewTestData.filter((item) => item !== resNewTestData[id]))
+		localStorage.setItem("newTestData", deleteItem)
+		reading()
 	}
 	location.reload()
 }
@@ -491,6 +498,9 @@ const access = (id, science) => {
 	else if (science == "matem") {
 		localStorage.setItem("id", id)
 		localStorage.setItem("science", "metematika")
+	} else if (science == "psychologist") {
+		localStorage.setItem("id", id)
+		localStorage.setItem("science", "newTestData")
 	}
 
 }
@@ -518,25 +528,27 @@ if (localStorage.getItem("data")) {
 	})
 }
 const testI = () => {
-	if (resOnaTili[id][counter].name) {
-		if (science == "OnaTili") {
-			question.innerHTML = resOnaTili[id][counter].name
-			A.innerHTML = resOnaTili[id][counter].inputA
-			B.innerHTML = resOnaTili[id][counter].inputB
-			D.innerHTML = resOnaTili[id][counter].inputD
-		} else if (science == "tarx") {
-			question.innerHTML = resTarx[id][counter].name
-			A.innerHTML = resTarx[id][counter].inputA
-			B.innerHTML = resTarx[id][counter].inputB
-			D.innerHTML = resTarx[id][counter].inputD
-		} else if (science == "metematika") {
-			question.innerHTML = resMetematika[id][counter].name
-			A.innerHTML = resMetematika[id][counter].inputA
-			B.innerHTML = resMetematika[id][counter].inputB
-			D.innerHTML = resMetematika[id][counter].inputD
-		}
+	       if (science == "OnaTili") {
+		question.innerHTML = resOnaTili[id][counter].name
+		A.innerHTML = resOnaTili[id][counter].inputA
+		B.innerHTML = resOnaTili[id][counter].inputB
+		D.innerHTML = resOnaTili[id][counter].inputD
+	} else if (science == "tarx") {
+		question.innerHTML = resTarx[id][counter].name
+		A.innerHTML = resTarx[id][counter].inputA
+		B.innerHTML = resTarx[id][counter].inputB
+		D.innerHTML = resTarx[id][counter].inputD
+	} else if (science == "metematika") {
+		question.innerHTML = resMetematika[id][counter].name
+		A.innerHTML = resMetematika[id][counter].inputA
+		B.innerHTML = resMetematika[id][counter].inputB
+		D.innerHTML = resMetematika[id][counter].inputD
+	} else if (science == "newTestData") {
+		question.innerHTML = resNewTestData[id][counter].name
+		A.innerHTML = resNewTestData[id][counter].InputA
+		B.innerHTML = resNewTestData[id][counter].InputB
+		D.innerHTML = resNewTestData[id][counter].InputD
 	}
-	
 }
 
 const check = () => {
@@ -550,22 +562,22 @@ const check = () => {
 	}
 }
 const TheNext = () => {
- 	if (science == "OnaTili") {
-		if (resOnaTili[id].length+1 == counter) {
-			 theNext.disabled = true
- 	} else {
+	if (science == "OnaTili") {
+		if (resOnaTili[id].length + 1 == counter) {
+			theNext.disabled = true
+		} else {
 			resOnaTili[id][counter].answer == answera ? total++ : null;
 			radioA.checked = false
 			radioB.checked = false
 			radioD.checked = false
-			counter ++
+			counter++
 			testI()
 		}
 	}
-	 else if (science == "tarx") {
+	else if (science == "tarx") {
 		if (resTarx[id].length >= counter) {
 		} else {
-			resTarx[id][counter ].answer == answera ? total++ : "";
+			resTarx[id][counter].answer == answera ? total++ : "";
 			radioA.checked = false
 			radioB.checked = false
 			radioD.checked = false
@@ -574,32 +586,45 @@ const TheNext = () => {
 
 		}
 	}
-	 else if (science = "metematika") {
-		if (resMetematika[id].length+1 == counter) {
+	// else if (science = "metematika") {
+	// 	if (resMetematika[id].length + 1 == counter) {
+	// 	} else {
+	// 		resMetematika[id][counter].answer == answera ? total++ : "";
+	// 		radioA.checked = false
+	// 		radioB.checked = false
+	// 		radioD.checked = false
+	// 		counter++
+	// 		testI()
+	// 	}
+	// } 
+	else if (science = "newTestData") {
+		if (resNewTestData[id].length + 1 == counter) {
 		} else {
-			resMetematika[id][counter].answer == answera ? total++ : "";
-			radioA.checked = false
-			radioB.checked = false
-			radioD.checked = false
+			if (answera == "A") {
+				dataAnswers.push( resNewTestData[id][counter].InputA)
+			}else if (answera=="B" ) {
+				dataAnswers.push( resNewTestData[id][counter].InputB)
+			}
 			counter++
 			testI()
 
 		}
-	 }
-	number.innerHTML = counter +1
+	}
+	console.log(dataAnswers);
+	number.innerHTML = counter + 1
 }
 
 const first = () => {
 	theNext.className = ""
 	counter--
-	if ( counter == -1) {
+	if (counter == -1) {
 		counter = 0
 		firstB.className = "bg-active"
 	} else {
 		console.log(counter);
 		testI()
 	}
-	number.innerHTML = counter +1
+	number.innerHTML = counter + 1
 }
 
 function sayHi() {
@@ -612,11 +637,11 @@ function sayHi() {
 	time.innerHTML = min + ":" + sec
 }
 
-const finish = ()=>{
+const finish = () => {
 	if (science == "OnaTili") {
 		correct.innerHTML = total;
 		wrong.innerHTML = resOnaTili[id].length - total
-	}else if (science=="tarx") {
+	} else if (science == "tarx") {
 		correct.innerHTML = total;
 		wrong.innerHTML = resTarx[id].length.length - total
 	}
