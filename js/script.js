@@ -57,7 +57,7 @@ const register = () => {
             } else {
                 localStorage.setItem("data", JSON.stringify(data))
                 alert("200")
-                closeR()
+                location.reload()
                 data = []
                 name.value = ""
                 email.value = ""
@@ -93,7 +93,7 @@ const login = () => {
     if (result) {
         res?.some((elem,index)=>{
             if ( elem.password == passwordSign.value && elem.email == emailSign.value) {
-               localStorage.setItem( "userId" , `a${index}`)
+               localStorage.setItem( "userId" , `${index}`)
             } 
         })
         window.location.href = "../conponets/dashboard/index.html";

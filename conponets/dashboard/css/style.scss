@@ -252,66 +252,7 @@ a {
             }
         }
 
-        // background: #E5E5E5;
-        // padding: 30px 25px;
-        // .nav {
-        //     display: flex;
-        //     justify-content: space-between;
-        //     background: #FFF;
-        //     &__button {
-        //         &-time {
-        //             border: none;
-        //             outline: none;
-        //             background: #E5E5E5;
-        //             font-size: 20px;
-        //             color: #BB65FF;
-
-        //         }
-
-        //         &-finish {
-        //             border-radius: 4px;
-        //             border: 1px solid blue;
-        //             outline: none;
-        //             padding: 10px 20px;
-        //             background: #4C6FFF;
-        //             color: white;
-        //             cursor: pointer;
-        //             transition: 0.6s;
-        //         }
-
-        //         &-finish:hover {
-        //             background: white;
-        //             color: black;
-        //         }
-        //     }
-        // }
-
-        // .section {
-
-        //     &__body {
-        //         padding: 25px;
-        //         
-        //         border-radius: 16px;
-        //         background: #fff;
-        //         &__test {
-        //             h3 {
-        //                 font-size: 30px;
-        //             }
-        //             p{
-        //                 font-size: 14px;
-        //             }
-
-        //             span {
-        //                 font-size: 20px;
-        //                 padding: 10px;
-        //             }
-        //             div{
-        //                 margin-top: 25px;
-        //             }
-        //         }
-        //        
-        //     }
-        // }
+      
     }
 
     .section {
@@ -319,7 +260,6 @@ a {
 
         .navbar {
             position: -webkit-sticky;
-            /* Safari */
             position: sticky;
             top: 0;
             width: 100%;
@@ -722,7 +662,9 @@ a {
                     color: #425466;
                     font-size: 14px;
                 }
-
+                h4{
+                    margin-top: 15px;
+                }
                 input {
                     margin-top: 15px;
                 }
@@ -747,6 +689,9 @@ a {
         background: #E5E5E5;
 
         .navbar {
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
             padding: 25px;
             display: flex;
             justify-content: space-between;
@@ -867,6 +812,10 @@ a {
     .section__theResult {
         background: #E5E5E5;
         .navbar {
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+
             padding: 15px;
             background: #FFFFFF;
             font-weight: 600;

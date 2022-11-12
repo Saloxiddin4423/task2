@@ -99,7 +99,7 @@
                 </div>
             </div>
         </section>
-        <section class="section d-none" id="section">
+        <section class="section d-block" id="section">
             <main-navbar></main-navbar>
             <div class="section__body" id="section__body">
 
@@ -120,14 +120,14 @@
                 </table>
             </div>
         </section>
-        <section class="section__test d-block" id="section__test">
+        <section class="section__test d-none" id="section__test">
             <nav class="navbar">
                 <div class="navbar__text">
                     <h1>Create new test</h1>
                 </div>
                 <div class="navbar__button">
                     <button class="navbar__button-preview"><i class="bi bi-eye"></i> Test preview </button>
-                    <button class="navbar__button-Save"><i class="bi bi-bookmark-check"></i> Save</button>
+                    <button class="navbar__button-Save" onclick="addTest('collor')"><i class="bi bi-bookmark-check"></i> Save</button>
                 </div>
             </nav>
             <div class="section__test__body">
@@ -157,9 +157,11 @@
                             </select>
                         </div>
                         <div class="section__test__body__form__header__buttons">
-                            <button onclick="next()" class="section__test__body__form__header__buttons-delete">Next <i
+                            <button onclick="next('collar')"
+                                class="section__test__body__form__header__buttons-delete">Next <i
                                     class="bi bi-arrow-right-short"></i></button>
-                            <button onclick="addTest()" class="section__test__body__form__header__buttons-create"><i
+                            <button onclick="addTest('collor')"
+                                class="section__test__body__form__header__buttons-create"><i
                                     class="bi bi-bookmark-check"></i> Save</button>
                         </div>
                     </div>
@@ -180,7 +182,7 @@
                     <h4 id="prepared">Number of tests prepared:</h4>
                 </div>
 
-                <div class="section__test__body__form2 d-block" id="section__test__body__form2">
+                <div class="section__test__body__form2 d-none" id="section__test__body__form2">
                     <div class="section__test__body__form__header">
                         <div class="section__test__body__form__header-title">
                             <h2>A multiple choice question</h2>
@@ -195,19 +197,16 @@
                         </div>
                     </div>
                     <label for="">Question title</label> <br>
-                    <input class="section__test__body__form-input" type="text" placeholder="Savol nomini kiriting"
+                    <input class="section__test__body__form-input" type="text" placeholder="Enter a question name"
                         name="" id="InputName"><br>
                     <label for="">Options</label> <br>
-                    <input type="checkbox" placeholder="Savol nomini kiriting" name="" id="">
-                    <input class="section__test__body__form-input" type="text" placeholder="Savol nomini kiriting"
+                    <input class="section__test__body__form-input" type="text" placeholder="enter the options"
                         name="" id="InputA"><br>
-                    <input type="checkbox" placeholder="Savol nomini kiriting" name="" id="">
-                    <input class="section__test__body__form-input" type="text" placeholder="Savol nomini kiriting"
+                    <input class="section__test__body__form-input" type="text" placeholder="enter the options"
                         name="" id="InputB"><br>
-                    <input type="checkbox" placeholder="Savol nomini kiriting" name="" id="">
-                    <input class="section__test__body__form-input" type="text" placeholder="Savol nomini kiriting"
+                    <input class="section__test__body__form-input" type="text" placeholder="enter the options"
                         name="" id="InputD">
-                        <h4 id="prepared">Number of tests prepared:</h4>
+                    <h4 id="prepareda">Number of tests prepared:</h4>
                 </div>
             </div>
         </section>
@@ -262,17 +261,17 @@
             </div>
         </section>
     </div>
-
+ 
     <div class="modal d-none" id="modal">
         <div class="modal__header">
-            <h2>Savol turini tanlang</h2> <br>
+            <h2>Select a question type</h2> <br>
             <hr><br>
             <div class="modal__header-item" onclick="exchange('oneOption')">
                 <div class=" ">
                     <img src="../../img/Frame 21237.png" width="44px" alt="">
                 </div>
                 <div class="modal__header-item-text">
-                    <h3> Bitta variant tanlanuvchi savol</h3>
+                    <h3>A single-choice question</h3>
                 </div>
             </div> <br>
             <hr><br>
@@ -281,7 +280,7 @@
                     <i class="bi bi-check-square"></i>
                 </div>
                 <div class="modal__header-item-text">
-                    <h3>Bir nechta variant tanlanuvchi savol</h3>
+                    <h3>A multiple choice question</h3>
                 </div>
             </div> <br>
 

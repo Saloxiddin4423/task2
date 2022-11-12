@@ -284,7 +284,6 @@ a {
 
 .containers .section .navbar {
   position: -webkit-sticky;
-  /* Safari */
   position: sticky;
   top: 0;
   width: 100%;
@@ -698,6 +697,10 @@ a {
   font-size: 14px;
 }
 
+.containers .section__test__body__form2 h4 {
+  margin-top: 15px;
+}
+
 .containers .section__test__body__form2 input {
   margin-top: 15px;
 }
@@ -720,6 +723,9 @@ a {
 }
 
 .containers .section__account .navbar {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
   padding: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -848,6 +854,9 @@ a {
 }
 
 .containers .section__theResult .navbar {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
   padding: 15px;
   background: #FFFFFF;
   font-weight: 600;
