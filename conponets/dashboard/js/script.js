@@ -388,7 +388,7 @@ function reading() {
 			section__body.innerHTML += `
 		   <div class="cards">
 			<div class="card" onclick="access('${index}','psychologist')">
-			   <img src="../../img/matem.png" alt="">
+			   <img src="../../img/xx.jpg" alt="">
 			   <h3 class="card-title">Psychologist</h3>
 			   <a href="answers.html">
 			   <p class="card-label">check the answers</p></a>
@@ -600,7 +600,7 @@ const TheNext = () => {
 			testI()
 		}
 	}
-	else if (science = "metematika") {
+	else if (science == "metematika") {
 		if (resMetematika[id].length <= counter) {
 			alert("the questions are over, thank you for your attention!")
 		} else {
